@@ -68,7 +68,7 @@ def partition1(arr, low, high):
         # and swap the current element with the element at ith
         if arr[j] < pivot:
             i += 1
-            # print(f"Swapped {arr[i]} and {arr[j]}")
+            print(f"Swapped {arr[i]} and {arr[j]}")
             arr[i], arr[j] = arr[j], arr[i]
             # increment the swap_count
 
@@ -76,7 +76,7 @@ def partition1(arr, low, high):
         # increment the compare_count
         compare_count += 1
     # when j reaches the end of the array, swap the pivot with the element at i+1
-    # print(f"move pivot {arr[high]}to the right place: {arr[i + 1]}")
+    print(f"move pivot {arr[high]}to the right place: {arr[i + 1]}")
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
     swap_count += 1
     # print(f"compare_count: {compare_count}")
@@ -90,9 +90,9 @@ import time
 
 # arr = [5, 4, 9, 8, 3, 7]
 # arr = [2, 8,  7,  1, 3,  5,  6,  4]
-# arr = [1, 2, 3, 4, 5, 6, 7, 8]
+arr = [1, 2, 3, 4, 5, 6, 7, 8]
 # arr = [8, 7, 6, 5, 4, 3, 2, 1]
-arr = [8, 5, 3, 4, 2, 6, 1, 7]
+# arr = [8, 5, 3, 4, 2, 6, 1, 7]
 
 # capture the start time
 start = time.time()

@@ -158,8 +158,9 @@ def partition2(arr,low,high):
         else:
             break
     # print(f"swap pivot: {arr[low]} and {arr[j]}")
-    arr[low], arr[j] = arr[j], arr[low]
-    swap_count += 1
+    if j != low:
+        arr[low], arr[j] = arr[j], arr[low]
+        swap_count += 1
     # print(f"Moved pivot to position {j}, arr: {arr}")
     # print(f"compare_count: {compare_count}, swap_count: {swap_count}")
     return j, compare_count, swap_count
@@ -246,20 +247,25 @@ import sys
 sys.setrecursionlimit(1000000)
 random_array = [random.randint(1, 100) for _ in range(100000)]
 arr = random_array
-
+# arr = [2, 8,  7,  1, 3,  5,  6,  4]
+# arr = [1, 2, 3, 4, 5, 6, 7, 8]
+# arr = [8, 7, 6, 5, 4, 3, 2, 1]
+# arr = [8, 5, 3, 4, 2, 6, 1, 7]
 #capture the start time
-# start = time.time()
-# quicksort1(arr, 0, len(arr) - 1)  # [1, 3, 4, 5, 10]
+start = time.time()
+quicksort1(arr, 0, len(arr) - 1)  # [1, 3, 4, 5, 10]
 # # print the running time
-# print(f"running time: {(time.time() - start) }seconds")
+print(f"running time: {(time.time() - start) }seconds")
 
 start = time.time()
 quicksort2(arr,0,len(arr)-1)
+
+# print(f"running time: {(time.time() - start) * 1000000}ms")
 # print the running time
 print(f"running time: {(time.time() - start) }seconds")
 
-# start = time.time()
-# heapSort(arr) # [1, 3, 4, 5, 10]
+start = time.time()
+heapSort(arr) # [1, 3, 4, 5, 10]
 #
-# # print the running time
-# print(f"running time: {(time.time() - start)}seconds")
+# print the running time
+print(f"running time: {(time.time() - start)}seconds")
