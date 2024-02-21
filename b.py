@@ -64,22 +64,22 @@ def partition2(arr,low,high):
         if i < j:
             arr[i], arr[j] = arr[j], arr[i]
             swap_count += 1
-            # print(f"Swapped {arr[j]} and {arr[i]}, arr: {arr}")
+            print(f"Swapped {arr[j]} and {arr[i]}, arr: {arr}")
         else:
             break
     if j != low:
         arr[low], arr[j] = arr[j], arr[low]
         swap_count += 1
-        # print(f"Swapped pivot: {pivot} with {arr[low]}, arr: {arr}")
+        print(f"Swapped pivot: {pivot} with {arr[low]}, arr: {arr}")
 
-    # print(f"Final partition: {arr}, compare_count: {compare_count}, swap_count: {swap_count}")
+    print(f"Final partition: {arr}, compare_count: {compare_count}, swap_count: {swap_count}")
     # print(f"arr[:{j}]: {arr[:j]}, arr[{j + 1}:]: {arr[j + 1:]}")
     return j, compare_count, swap_count
 
 import time
 # arr = [5,4,9,8,3,7]
-# arr = [2, 8,  7,  1, 3,  5,  6,  4]
-arr = [1, 2, 3, 4, 5, 6, 7, 8]
+arr = [2, 8,  7,  1, 3,  5,  6,  4]
+# arr = [1, 2, 3, 4, 5, 6, 7, 8]
 # arr = [8, 7, 6, 5, 4, 3, 2, 1]
 # arr = [8, 5, 3, 4, 2, 6, 1, 7]
 # from heapsort import random_array
@@ -90,4 +90,4 @@ start = time.time()
 quicksort2(arr,0,len(arr)-1) # [1, 3, 4, 5, 10]
 
 # print the running time
-print(f"running time: {(time.time() - start) * 1000000}ms")
+print(f"running time: {(time.time() - start) * 1000}ms")
